@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>My App</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.table.css">
+</head>
+
+<body>
+  <h1>
+
+  </h1>
+  <table>
+    <caption>
+       Google Calendar Events <a href="\json">(Get JSON raw data)</a>
+    </caption>
+    <tr>
+      <th>Summary</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Organizer</th>
+
+    </tr>
+    <% for(var i=0; i < event["items"].length; i++) { %>
+    <tr>
+      <td><%= event["items"][i]["summary"]%></td>
+      <td><%= event["items"][i]["start"]["date"]%></td>
+      <td><%= event["items"][i]["end"]["date"]%></td>
+      <td><%= event["items"][i]["organizer"]["displayName"]%></td>
+    </tr>
+    <% } %>
+  </table>
+</body>
